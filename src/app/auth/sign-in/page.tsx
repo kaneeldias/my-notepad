@@ -1,12 +1,14 @@
-import {getProviders} from "next-auth/react";
-import GoogleSignInButton from "@/app/components/Auth/GoogleSignInButton";
+"use client"
 
-export default async function Page() {
-    const providers = await getProviders();
-    
+import GoogleSignInButton from "@/app/components/Auth/GoogleSignInButton";
+import {Suspense} from "react";
+
+export default function Page() {
     return (
         <div className={`flex w-full h-full items-center justify-center`}>
-            <GoogleSignInButton id={providers!.google.id}/>
+            <Suspense fallback={<div></div>}>
+                <GoogleSignInButton id={"google"}/>
+            </Suspense>
         </div>
     );
 }
