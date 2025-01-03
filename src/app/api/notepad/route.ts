@@ -5,7 +5,7 @@ import {getServerSession} from "next-auth";
 const UNAUTHORIZED = NextResponse.json({error: 'Unauthorized'}, {status: 401});
 
 
-const dynamoDBClientConfigs = process.env.NODE_ENV === "production" ? {
+const dynamoDBClientConfigs = process.env.LOCAL === "false" ? {
     region: process.env.PROD_AMAZON_REGION!,
     credentials: {
         accessKeyId: process.env.PROD_AMAZON_ACCESS_KEY_ID!,
