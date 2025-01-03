@@ -85,6 +85,6 @@ describe("Header component, when user is authenticated", () => {
         expect(profileImage).toBeDefined();
         expect(profileImage.getAttribute("src")).toContain("_next/image?url=https%3A%2F%2Fexample.com%2Fimage.jpg&w=64&q=75");
         expect(profileImage.getAttribute("width")).toBe("30");
-        expect(profileImage.getAttribute("height")).toBe("32");
+        expect(profileImage.getAttribute("height")).toBe("30");
     });
 });
