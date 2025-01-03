@@ -7,8 +7,8 @@ const UNAUTHORIZED = NextResponse.json({error: 'Unauthorized'}, {status: 401});
 const dynamoDBClient = new DynamoDBClient({
     region: process.env.AMAZON_REGION!,
     credentials: {
-        accessKeyId: process.env.AMAZON_REGION!,
-        secretAccessKey: process.env.AMAZON_REGION!,
+        accessKeyId: process.env.AMAZON_ACCESS_KEY_ID!,
+        secretAccessKey: process.env.AMAZON_SECRET_ACCESS_KEY!,
     }
 });
 
