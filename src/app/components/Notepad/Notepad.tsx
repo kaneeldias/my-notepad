@@ -38,7 +38,7 @@ export default function Notepad() {
     return (
         <div className={`w-full h-full`}>
             {content && (
-                <div className={` space-x-normal flex justify-end fixed bottom-10 right-0 p-large`}>
+                <div className={`space-x-normal flex justify-end fixed bottom-0 right-0 p-large`}>
                     <ClearAllButton onClick={clearAll}/>
                     <SaveButton onClick={save} disabled={saving}/>
                 </div>
