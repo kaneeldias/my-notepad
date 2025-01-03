@@ -4,13 +4,19 @@ import {getServerSession} from "next-auth";
 
 const UNAUTHORIZED = NextResponse.json({error: 'Unauthorized'}, {status: 401});
 
+const dynamoDBClient = new DynamoDBClient({
+    region: process.env.AMAZON_REGION!,
+    credentials: {
+        accessKeyId: process.env.AMAZON_REGION!,
+        secretAccessKey: process.env.AMAZON_REGION!,
+    }
+});
+
 const getNote = async function () {
     const session = await getServerSession();
     if (!session || !session.user || !session.user.email) {
         return UNAUTHORIZED;
     }
-    
-    const dynamoDBClient = new DynamoDBClient();
     
     const input = {
         Key: {
@@ -38,8 +44,6 @@ const updateNote = async function (request: NextRequest) {
     
     const data = await request.json();
     const content = data.content;
-    
-    const dynamoDBClient = new DynamoDBClient();
     
     const input = {
         Item: {
