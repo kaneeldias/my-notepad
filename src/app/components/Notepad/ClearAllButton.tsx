@@ -6,7 +6,7 @@ type Props = {
 
 export default function ClearAllButton(props: Props) {
     return (
-        <div className={`fixed bottom-10 right-0 p-large`}>
+        <div className={``}>
             <Button color={"red"} size={"large"} onClick={props.onClick}>
                 <div className={`flex items-center space-x-normal`}>
                     <TrashIcon/>

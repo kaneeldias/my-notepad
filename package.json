@@ -9,6 +9,9 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@aws-sdk/client-dynamodb": "^3.721.0",
+    "@mantine/core": "^7.15.2",
+    "@mantine/hooks": "^7.15.2",
     "next": "15.1.3",
     "next-auth": "^4.24.11",
     "react": "^19.0.0",
